@@ -13,9 +13,17 @@ public class CalcController {
     public CalcController(CalculatorService calculatorService) {
         this.calculatorService = calculatorService;
     }
-
     @GetMapping
     public String greetings() {
         return calculatorService.hello();
     }
+    @GetMapping("/plus")
+    public String summ(int num1, int num2) {
+        return calculatorService.summ(num1, num2);
+    }
+    @GetMapping("/minus")
+    public String subtr(int num1, int num2) {
+        return calculatorService.summ(num1, num2);
+    }
+
 }
