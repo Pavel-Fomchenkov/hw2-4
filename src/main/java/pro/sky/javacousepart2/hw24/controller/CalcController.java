@@ -13,17 +13,29 @@ public class CalcController {
     public CalcController(CalculatorService calculatorService) {
         this.calculatorService = calculatorService;
     }
+
     @GetMapping
     public String greetings() {
         return calculatorService.hello();
     }
+
     @GetMapping("/plus")
-    public String summ(int num1, int num2) {
-        return calculatorService.summ(num1, num2);
-    }
-    @GetMapping("/minus")
-    public String subtr(int num1, int num2) {
+    public String summ(String num1, String num2) {
         return calculatorService.summ(num1, num2);
     }
 
+    @GetMapping("/minus")
+    public String subtr(String num1, String num2) {
+        return calculatorService.subtr(num1, num2);
+    }
+
+    @GetMapping("/multiply")
+    public String mult(String num1, String num2) {
+        return calculatorService.mult(num1, num2);
+    }
+
+    @GetMapping("/divide")
+    public String divide(String num1, String num2) {
+        return calculatorService.divide(num1, num2);
+    }
 }
